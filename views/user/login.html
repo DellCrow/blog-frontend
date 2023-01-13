@@ -1,0 +1,22 @@
+<div class="form-login">
+  <p id="blog">BLOG</p>
+  <form ng-submit="submitLogin()">
+    <input type="text"
+           class="form-input"
+           name="name"
+           placeholder="email"
+           ng-model="login.username">
+    <input type="password"
+           class="form-input"
+           name="password"
+           placeholder="password"
+           ng-model="login.password">
+    <p id="error-message"> {{ message }} </p>
+    <button class="button button--form"
+            type="submit">Entrar</button>
+  </form>
+  <a href="#/register">
+    <button class="button button--form"
+            type="button">Registrar</button>
+  </a>
+</div>

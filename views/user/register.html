@@ -1,0 +1,33 @@
+<div class="form-login">
+	<p id="blog">BLOG</p>
+	<form ng-submit="submitRegister()">
+		<input type="text"
+					 class="form-input"
+					 name="username"
+					 placeholder="username"
+					 ng-model="register.username"
+					 required>
+		<input type="text"
+					 class="form-input"
+					 name="email"
+					 placeholder="email"
+					 ng-model="register.email"
+					 required>
+		<input type="password"
+					 class="form-input"
+					 name="password"
+					 placeholder="password"
+					 ng-model="register.password"
+					 required>
+		<button class="button button--form"
+						type="submit">
+			Registrar
+		</button>
+	</form>
+	<a href="#/">
+		<button class="button button--form"
+						type="button">
+			entrar
+		</button>
+	</a>
+</div>

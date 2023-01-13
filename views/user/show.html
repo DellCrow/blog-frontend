@@ -1,0 +1,22 @@
+<div class="main-content">
+  <div class="main-content-item">
+    <p class="main-content-title main-content-title--hover">Informações do Usuário</p>
+    <div class="main-content-item">
+      <delete-user user="$root.currentUser"></delete-user>
+      <div class="main-content-title main-content-title--hover">
+        {{ currentUser.name }}
+        <a class="edit-icon"
+           href="#/user/edit">
+        <i class="fa fa-pencil-square-o"
+           aria-hidden="true"></i>
+      </a>
+      </div>
+      <div class="main-content-title main-content-title--hover">
+        {{ currentUser.email }}
+      </div>
+      <div class="main-content-title main-content-title--hover">
+        {{ currentUser.created_at | date:'dd/MM/yyyy' }}
+      </div>
+    </div>
+  </div>
+</div>

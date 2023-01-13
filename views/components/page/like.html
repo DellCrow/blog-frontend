@@ -1,0 +1,18 @@
+<div class="likes">
+  <i aria-hidden="true"
+     ng-click="verifyIfPostIsLiked(post)"
+     class="like-img"
+     ng-class="{'fa fa-heart liked':post.liked,
+              'fa fa-heart-o' :post.liked == false}">
+  </i>
+  {{ post.likes_count }}
+</div>
+<div class="likes">
+  <i aria-hidden="true"
+     ng-click="verifyIfCommentIsLiked(comment)"
+     class="like-img"
+     ng-class="{'fa fa-heart liked':comment.liked,
+              'fa fa-heart-o' :comment.liked == false}">
+  </i>
+  {{ comment.likes_count }}
+</div>

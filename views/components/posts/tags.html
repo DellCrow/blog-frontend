@@ -1,0 +1,30 @@
+<div class="tag-img">
+  <a ng-mouseover="getPostTags(post)">
+    <i class="fa fa-tags"
+       aria-hidden="true"></i>
+  </a>
+  <div class="tag-dropdown-content">
+    <p>tags no post</p>
+    <div class="grid grid-template-columns">
+      <div class="main-content-item"
+           ng-repeat="tag in posts[post.id].tags">
+        {{ tag.name }}
+        <i class="fa fa-times context-menu-button"
+           aria-hidden="true"
+           ng-click="removeTagFromPost(post, tag)">
+        </i>
+      </div>
+    </div>
+    <p>Tags disponíveis</p>
+    <div class="grid grid-template-columns">
+      <div class="main-content-item"
+           ng-repeat="tag in tags">
+        {{ tag.name }}
+        <i class="fa fa-plus context-menu-button"
+           aria-hidden="true"
+           ng-click="addTagToPost(post, tag)">
+        </i>
+      </div>
+    </div>
+  </div>
+</div>

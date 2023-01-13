@@ -1,0 +1,25 @@
+<div class="main-content">
+  <div class="main-content-item">
+    <div class="main-content-title main-content-title--hover">
+      <p>{{ post.id ? 'Editar post' : 'Criar post' }}</p>
+    </div>
+    <div class="main-content-item">
+      <form ng-submit="save()">
+        <input type="text"
+               name="title"
+               class="form-input"
+               placeholder="Título"
+               ng-model="post.title"
+               required>
+        <textarea ng-model="post.description"
+                  class="form-input"
+                  name="description"
+                  placeholder="Descrição"
+                  required>
+          {{ post.description }}
+        </textarea>
+        <button type="submit" class="button button--form">Enviar</button>
+      </form>
+    </div>
+  </div>
+</div>

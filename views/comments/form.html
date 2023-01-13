@@ -1,0 +1,18 @@
+<div class="main-content">
+  <div class="main-content-item">
+    <div class="main-content-title main-content-title--hover">
+      <p>{{ comment.id ? 'Editar Comentário' : 'Criar Comentário' }}</p>
+    </div>
+    <div class="main-content-item">
+      <form ng-submit="save()">
+        <textarea ng-model="comment.text"
+                  class="form-input"
+                  name="text"
+                  placeholder="Comentário"
+                  required>
+        </textarea>
+        <button type="submit" class="button button--form">Enviar</button>
+      </form>
+    </div>
+  </div>
+</div>

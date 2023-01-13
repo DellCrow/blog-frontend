@@ -1,0 +1,41 @@
+<div class="header">
+  <div class="menu">
+    <a class="button"
+       href="#/posts">Posts</a>
+    <a class="button"
+       href="#/tags">Tags</a>
+  </div>
+  <div class="profile">
+    <i id="profile-img"
+       class="fa
+              fa-user-o"
+       aria-hidden="true"></i>
+    <div class="dropdown-content">
+      <div class="user">
+        <p ng-if="$root.currentUser.name"
+           class="user-text">
+          {{ $root.currentUser.name }}
+        </p>
+        <a ng-if="!$root.currentUser.name && !$root.currentUser.email"
+           class="user-text"
+           href="#/">
+           Entrar
+        </a>
+        <p ng-if="$root.currentUser.email"
+           class="user-text">
+           {{ $root.currentUser.email }}
+        </p>
+      </div>
+      <div class="edit-profile" >
+        <a class="edit-profile"
+           id="edit-profile-text"
+           href="#/user">Editar Perfil</a>
+      </div>
+      <div class="logout">
+        <a class="button"
+           id="logoff"
+           ng-click="logoff()">sair</a>
+      </div>
+    </div>
+  </div>
+</div>

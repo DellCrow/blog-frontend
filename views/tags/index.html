@@ -1,0 +1,16 @@
+<div class="main-content">
+  <div class="create">
+    <a class="create-text"
+        href="#/tags/new">Criar tag</a>
+  </div>
+  <div class="main-content-item"
+        ng-repeat="tag in tags">
+    {{ tag.name }}
+    <a class="edit-icon"
+       href="#/tags/{{ tag.id }}">
+      <i class="fa fa-pencil-square-o"
+         aria-hidden="true"></i>
+    </a>
+    <delete-tag tag="tag"></delete-tag>
+  </div>
+</div>

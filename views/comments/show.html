@@ -1,0 +1,22 @@
+<div class="main-content">
+  <div class="main-content-item">
+    <delete-comment comment="comment"></delete-comment>
+    <div class="main-content-title">
+      <div class="main-content-title-text">
+        {{ comment.text }}
+        <a ng-if="comment.user_id == $root.currentUser.id"
+           class="edit-icon"
+           href="#/posts/{{ post.id }}/comments/{{ comment.id }}/edit">
+          <i class="fa fa-pencil-square-o"
+             aria-hidden="true">
+          </i>
+        </a>
+      </div>
+    </div>
+    <div class="comment-childs">
+      <div class="comment-date">
+        {{ comment.created_at | date:'dd/MM/yyyy'}}
+      </div>
+      <like comment="comment"></like>
+  </div>
+</div>

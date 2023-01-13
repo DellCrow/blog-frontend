@@ -1,0 +1,28 @@
+<div class="main-content">
+	<div class="main-content-item">
+		<div class="main-content-title main-content-title--hover">
+			<p>Editar Usuário</p>
+		</div>
+		<form ng-submit="update()">
+			<input type="text"
+						 name="name"
+						 class="form-input"
+						 placeholder="Novo nome"
+						 ng-model="currentUser.name"
+						 required>
+			<input type="text"
+						name="email"
+						class="form-input"
+						placeholder="Novo email"
+						ng-model="currentUser.email"
+						required>
+			<input type="password"
+						name="password"
+						class="form-input"
+						placeholder="Nova senha"
+						ng-model="currentUser.password"
+						required>
+			<button type="submit" class="button button--form">Enviar</button>
+		</form>
+	</div>
+</div>

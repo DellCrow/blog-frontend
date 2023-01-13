@@ -3,13 +3,13 @@ app.controller('PostsController', PostController);
 PostController.$inject = [
   '$scope',
   'PostService',
-  '$routeParams',
+  '$stateParams',
   'type',
   '$location',
   'TagService'
 ];
 
-function PostController($scope, PostService, $routeParams, type, $location) {
+function PostController($scope, PostService, $stateParams, type, $location) {
 
   $scope.save = () => {
     if ($scope.post.id) {
@@ -69,7 +69,7 @@ function PostController($scope, PostService, $routeParams, type, $location) {
     if (type == 'show' || type == 'edit') {
       $scope.post = {};
 
-      PostService.get($routeParams.id).then(function (response) {
+      PostService.get($stateParams.id).then(function (response) {
         if (response) {
           $scope.post = response;
         };

@@ -1,5 +1,5 @@
 app.service('TagService', ['$http', function($http) {
-  const list = $http.get('http://localhost:3000/tags')
+  const list = () => $http.get('http://localhost:3000/tags')
     .then(function (response) {
       return response.data;
     });

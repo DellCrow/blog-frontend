@@ -58,7 +58,7 @@ app.directive('tags', function () {
       const initialize = () => {
         $scope.tags = [];
 
-        TagService.list.then(function (response) {
+        TagService.list().then(function (response) {
           if (response && response.length > 0) {
             $scope.tags = response;
           };

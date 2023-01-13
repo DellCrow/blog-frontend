@@ -4,12 +4,12 @@ TagController.$inject = [
   '$scope',
   'TagService',
   '$location',
-  '$routeParams',
+  '$stateParams',
   'type',
-  '$window'
+  '$state'
 ];
 
-function TagController($scope, TagService, $location, $routeParams, type) {
+function TagController($scope, TagService, $location, $stateParams, type, $state) {
   $scope.save = () => {
     if ($scope.tag.id) {
       $scope.update();
@@ -22,7 +22,8 @@ function TagController($scope, TagService, $location, $routeParams, type) {
     TagService.create($scope.tag)
       .then(function (response) {
         if (response) {
-          $location.path('/tags');
+          $state.go('tags', {}, {reload: true});
+          // $location.path('/tags');
         } else {
           $scope.tag = {};
         };
@@ -48,7 +49,7 @@ function TagController($scope, TagService, $location, $routeParams, type) {
     if(type == 'edit') {
       $scope.tag = {};
 
-      TagService.get($routeParams.id).then(function (response) {
+      TagService.get($stateParams.id).then(function (response) {
         if (response) {
           $scope.tag = response;
         };
@@ -56,7 +57,7 @@ function TagController($scope, TagService, $location, $routeParams, type) {
     } else {
       $scope.tags = [];
 
-      TagService.list.then(function (response) {
+      TagService.list().then(function (response) {
         if (response && response.length > 0) {
           $scope.tags = response;
         }

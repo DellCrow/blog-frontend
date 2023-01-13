@@ -5,9 +5,9 @@ app.directive('deleteComment', function () {
       comment: '='
     },
     templateUrl: 'views/components/comments/delete.html',
-    controller: function ($scope, CommentService, $window, $routeParams) {
+    controller: function ($scope, CommentService, $window, $stateParams) {
       $scope.delete = () => {
-        CommentService.destroy($routeParams.id, $scope.comment).then(function () {
+        CommentService.destroy($stateParams.id, $scope.comment).then(function () {
           $window.location.reload();
         });
       };

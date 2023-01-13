@@ -6,7 +6,7 @@ LikeController.$inject = [
   '$routeParams',
 ];
 
-function LikeController($scope, LikeService, $routeParams) {
+function LikeController($scope, LikeService, $stateParams) {
 
   $scope.verifyIfPostIsLiked = (post) => {
     if(post.liked) {
@@ -44,7 +44,7 @@ function LikeController($scope, LikeService, $routeParams) {
 
   const likeComment = (comment) => {
     $scope.currentComment = comment;
-    LikeService.LikeComment($routeParams.id, comment.id).then(function (response) {
+    LikeService.LikeComment($stateParams.id, comment.id).then(function (response) {
         if (response) {
           $scope.currentComment.likes_count++;
           $scope.currentComment.liked = true;
@@ -54,7 +54,7 @@ function LikeController($scope, LikeService, $routeParams) {
 
   const dislikeComment = (comment) => {
     $scope.currentComment = comment;
-    LikeService.dislikeComment($routeParams.id, comment.id).then(function() {
+    LikeService.dislikeComment($stateParams.id, comment.id).then(function() {
         $scope.currentComment.likes_count--;
         $scope.currentComment.liked = !$scope.currentComment.liked;
     })

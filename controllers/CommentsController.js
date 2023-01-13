@@ -4,11 +4,11 @@ CommentController.$inject = [
   '$scope',
   'CommentService',
   '$location',
-  '$routeParams',
+  '$stateParams',
   'type'
 ];
 
-function CommentController($scope, CommentService, $location, $routeParams, type) {
+function CommentController($scope, CommentService, $location, $stateParams, type) {
   $scope.save = () => {
     if ($scope.comment.id) {
       $scope.update();
@@ -18,10 +18,10 @@ function CommentController($scope, CommentService, $location, $routeParams, type
   };
 
   $scope.create = () => {
-    CommentService.create($routeParams.id, $scope.comment)
+    CommentService.create($stateParams.id, $scope.comment)
       .then(function (response) {
         if (response) {
-          $location.path('/posts/' + $routeParams.id);
+          $location.path('/posts/' + $stateParams.id);
         } else {
           $scope.comment = {};
         };
@@ -29,10 +29,10 @@ function CommentController($scope, CommentService, $location, $routeParams, type
   };
 
   $scope.update = () => {
-    CommentService.update($routeParams.id, $routeParams.comment_id, $scope.comment)
+    CommentService.update($stateParams.id, $stateParams.comment_id, $scope.comment)
       .then(function (response) {
         if (response) {
-          $location.path('/posts/' + $routeParams.id);
+          $location.path('/posts/' + $stateParams.id);
         } else {
           $scope.comment = {};
         };
@@ -48,8 +48,8 @@ function CommentController($scope, CommentService, $location, $routeParams, type
       $scope.comment = {};
       $scope.post = {};
 
-      $scope.post.id = $routeParams.id;
-      CommentService.get($routeParams.id, $routeParams.comment_id).then(function (response) {
+      $scope.post.id = $stateParams.id;
+      CommentService.get($stateParams.id, $stateParams.comment_id).then(function (response) {
         if (response) {
           $scope.comment = response;
         };

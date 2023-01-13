@@ -6,7 +6,7 @@ app.directive('like', function() {
       comment: '=?'
     },
     templateUrl: 'views/components/page/like.html',
-    controller: function($scope, LikeService, $routeParams) {
+    controller: function($scope, LikeService, $stateParams) {
       $scope.verifyIfPostIsLiked = () => {
         if (!$scope.post.liked) {
           likePost()
@@ -42,7 +42,7 @@ app.directive('like', function() {
       }
 
       const likeComment = (comment) => {
-        LikeService.likeComment($routeParams.id, comment.id)
+        LikeService.likeComment($stateParams.id, comment.id)
           .then(function (response) {
             if (response) {
               $scope.comment.likes_count++;
@@ -52,7 +52,7 @@ app.directive('like', function() {
       }
 
       const dislikeComment = (comment) => {
-        LikeService.dislikeComment($routeParams.id, comment.id)
+        LikeService.dislikeComment($stateParams.id, comment.id)
           .then(function () {
             $scope.comment.likes_count--;
             $scope.comment.liked = !$scope.comment.liked;

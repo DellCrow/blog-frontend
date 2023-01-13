@@ -1,6 +1,7 @@
-app.config(function($routeProvider) {
-  $routeProvider
-    .when('/', {
+app.config(function($stateProvider) {
+  $stateProvider
+    .state('home', {
+      url: '/',
       templateUrl: 'views/user/login.html',
       controller: 'UserController',
       resolve: {
@@ -9,7 +10,8 @@ app.config(function($routeProvider) {
         }
       }
     })
-    .when('/register', {
+    .state('register', {
+      url: '/register',
       templateUrl: 'views/user/register.html',
       controller: 'UserController',
       resolve: {
@@ -18,7 +20,8 @@ app.config(function($routeProvider) {
         }
       }
     })
-    .when('/posts/new', {
+    .state('posts-new', {
+      url: '/posts/new',
       templateUrl: 'views/posts/form.html',
       controller: 'PostsController',
       resolve: {
@@ -27,7 +30,8 @@ app.config(function($routeProvider) {
         }
       }
     })
-    .when('/posts', {
+    .state('posts', {
+      url: '/posts',
       templateUrl: 'views/posts/index.html',
       controller: 'PostsController',
       resolve: {
@@ -36,7 +40,8 @@ app.config(function($routeProvider) {
         }
       }
     })
-    .when('/posts/:id',{
+    .state('posts-id',{
+      url: '/posts/:id',
       templateUrl: 'views/posts/show.html',
       controller: 'PostsController',
       resolve: {
@@ -45,7 +50,8 @@ app.config(function($routeProvider) {
         }
       }
     })
-    .when('/posts/:id/edit', {
+    .state('posts-id-edit', {
+      url: '/posts/:id/edit',
       templateUrl: 'views/posts/form.html',
       controller: 'PostsController',
       resolve: {
@@ -54,7 +60,8 @@ app.config(function($routeProvider) {
         }
       }
     })
-    .when('/tags', {
+    .state('tags', {
+      url: '/tags',
       templateUrl: 'views/tags/index.html',
       controller: 'TagsController',
       resolve: {
@@ -63,7 +70,8 @@ app.config(function($routeProvider) {
         }
       }
     })
-    .when('/tags/new', {
+    .state('tags-new', {
+      url: '/tags/new',
       templateUrl: 'views/tags/form.html',
       controller: 'TagsController',
       resolve: {
@@ -72,7 +80,8 @@ app.config(function($routeProvider) {
         }
       }
     })
-    .when('/tags/:id', {
+    .state('tags-id', {
+      url: '/tags/:id',
       templateUrl: 'views/tags/form.html',
       controller: 'TagsController',
       resolve: {
@@ -81,7 +90,8 @@ app.config(function($routeProvider) {
         }
       }
     })
-    .when('/user/', {
+    .state('user', {
+      url: '/user',
       templateUrl: 'views/user/show.html',
       controller: 'UserController',
       resolve: {
@@ -90,7 +100,8 @@ app.config(function($routeProvider) {
         }
       }
     })
-    .when('/user/edit', {
+    .state('user-edit', {
+      url: '/user/edit',
       templateUrl: 'views/user/form.html',
       controller: 'UserController',
       resolve: {
@@ -99,7 +110,18 @@ app.config(function($routeProvider) {
         }
       }
     })
-    .when('/posts/:id/comments', {
+    .state('user-password', {
+      url: '/user/password',
+      templateUrl: 'views/user/password-form.html',
+      controller: 'UserController',
+      resolve: {
+        type: () => {
+          return 'password';
+        }
+      }
+    })
+    .state('posts-id-comments', {
+      url: '/posts/:id/comments',
       templateUrl: 'views/comments/index.html',
       controller: 'CommentsController',
       resolve: {
@@ -108,7 +130,8 @@ app.config(function($routeProvider) {
         }
       }
     })
-    .when('/posts/:id/comments/new', {
+    .state('posts-id-comments-new', {
+      url: '/posts/:id/comments/new',
       templateUrl: 'views/comments/form.html',
       controller: 'CommentsController',
       resolve: {
@@ -117,7 +140,8 @@ app.config(function($routeProvider) {
         }
       }
     })
-    .when('/posts/:id/comments/:comment_id', {
+    .state('posts-idcomments-comment_id', {
+      url: '/posts/:id/comments/:comment_id',
       templateUrl: 'views/comments/show.html',
       controller: 'CommentsController',
       resolve: {
@@ -126,7 +150,8 @@ app.config(function($routeProvider) {
         }
       }
     })
-    .when('/posts/:id/comments/:comment_id/edit', {
+    .state('posts-id-comments-comment_id-edit', {
+      url: '/posts/:id/comments/:comment_id/edit',
       templateUrl: 'views/comments/form.html',
       controller: 'CommentsController',
       resolve: {

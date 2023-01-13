@@ -1,4 +1,5 @@
 app.service('UserService', ['$http', '$rootScope', function($http, $rootScope) {
+
   const update = () => $http.put('http://localhost:3000/user', {
     user: {
       name: $rootScope.currentUser.name,

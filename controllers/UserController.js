@@ -44,6 +44,24 @@ function UserController($scope, UserService, $location, $rootScope, type) {
     });
   };
 
+  $scope.updatePassword = () => {
+    UserService.update()
+      .then(function (response) {
+        if (response) {
+          $location.path('/user');
+          window.localStorage.removeItem('token');
+          window.localStorage.removeItem('name');
+          window.localStorage.removeItem('id');
+          window.localStorage.removeItem('email');
+          window.localStorage.removeItem('created_at');
+          $rootScope.currentUser = {};
+          $location.path('');
+        } else {
+          $scope.user = {};
+        };
+      })
+  }
+
   $scope.submitRegister = () => {
     UserService.register($scope.register).then(function (response) {
       if (response.error) {

@@ -110,16 +110,6 @@ app.config(function($stateProvider) {
         }
       }
     })
-    .state('user-password', {
-      url: '/user/password',
-      templateUrl: 'views/user/password-form.html',
-      controller: 'UserController',
-      resolve: {
-        type: () => {
-          return 'password';
-        }
-      }
-    })
     .state('posts-id-comments', {
       url: '/posts/:id/comments',
       templateUrl: 'views/comments/index.html',

@@ -5,8 +5,7 @@ PostController.$inject = [
   'PostService',
   '$stateParams',
   'type',
-  '$location',
-  'TagService'
+  '$location'
 ];
 
 function PostController($scope, PostService, $stateParams, type, $location) {

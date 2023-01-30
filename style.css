@@ -344,21 +344,6 @@ a{
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-.post-tags-item {
-  border-radius: 2px;
-  background-color: #b8b8b8;
-  padding: 3px;
-  justify-self: flex-start;
-}
-
-.tags-item {
-  border-radius: 2px;
-  justify-self: flex-start;
-  padding: 3px;
-  text-align: justify;
-  background-color: #b8b8b8;
-}
-
 .context-menu-button:hover {
   cursor: pointer;
   transform: scale(1.05);

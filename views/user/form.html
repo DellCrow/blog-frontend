@@ -22,7 +22,17 @@
 						 placeholder="Nova senha"
 						 ng-model="currentUser.password"
 						 required>
-			<button type="submit" class="button button--form">Enviar</button>
+			<input type="password"
+						 name="password"
+						 class="form-input"
+						 placeholder="Confirmar nova senha"
+						 ng-model="currentUser.newPassword"
+						 required>
+			<button ng-if="currentUser.password === currentUser.newPassword"
+							type="submit"
+							class="button button--form">Enviar</button>
+
+			<!-- <button type="submit" class="button button--form">Enviar</button> -->
 		</form>
 	</div>
 </div>

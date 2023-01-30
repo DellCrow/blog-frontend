@@ -23,7 +23,6 @@ function TagController($scope, TagService, $location, $stateParams, type, $state
       .then(function (response) {
         if (response) {
           $state.go('tags', {}, {reload: true});
-          // $location.path('/tags');
         } else {
           $scope.tag = {};
         };
